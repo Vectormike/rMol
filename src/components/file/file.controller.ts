@@ -10,6 +10,7 @@ export interface IFileController {
   downloadFile: RequestHandler;
   markUnsafe: RequestHandler;
   markSafe: RequestHandler;
+  getFileHistory: RequestHandler;
 }
 
 export function FileControllerFactory(fileService: FileService): IFileController {
@@ -26,7 +27,6 @@ export function FileControllerFactory(fileService: FileService): IFileController
           message: 'File successfully uploaded',
           status: 'success',
           statusCode: httpStatus.CREATED,
-          data: uploadedFile,
         });
       } catch (error) {
         logger.info(JSON.stringify(error));
@@ -46,7 +46,6 @@ export function FileControllerFactory(fileService: FileService): IFileController
           message: 'File successfully uploaded',
           status: 'success',
           statusCode: httpStatus.CREATED,
-          data: uploadedFile,
         });
       } catch (error) {
         logger.info(JSON.stringify(error));
@@ -114,6 +113,26 @@ export function FileControllerFactory(fileService: FileService): IFileController
           message: 'File successfully marked safe',
           status: 'success',
           statusCode: httpStatus.OK,
+        });
+      } catch (error) {
+        logger.info(JSON.stringify(error));
+        next(error);
+      }
+    },
+
+    /**
+     * Get file history
+     */
+    async getFileHistory(req: Request, res: Response, next: NextFunction): Promise<any> {
+      try {
+        const { user } = req;
+        const filesInstances = await fileService.getFileHistory({ currentUser: user });
+        logger.info(JSON.stringify(filesInstances));
+        return res.status(httpStatus.OK).json({
+          message: 'File successfully marked safe',
+          status: 'success',
+          statusCode: httpStatus.OK,
+          data: filesInstances,
         });
       } catch (error) {
         logger.info(JSON.stringify(error));

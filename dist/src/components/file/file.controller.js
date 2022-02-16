@@ -63,7 +63,6 @@ function FileControllerFactory(fileService) {
                                     message: 'File successfully uploaded',
                                     status: 'success',
                                     statusCode: http_status_1.default.CREATED,
-                                    data: uploadedFile,
                                 })];
                         case 2:
                             error_1 = _a.sent();
@@ -94,7 +93,6 @@ function FileControllerFactory(fileService) {
                                     message: 'File successfully uploaded',
                                     status: 'success',
                                     statusCode: http_status_1.default.CREATED,
-                                    data: uploadedFile,
                                 })];
                         case 2:
                             error_2 = _a.sent();
@@ -191,6 +189,37 @@ function FileControllerFactory(fileService) {
                             error_5 = _a.sent();
                             logger_1.default.info(JSON.stringify(error_5));
                             next(error_5);
+                            return [3 /*break*/, 3];
+                        case 3: return [2 /*return*/];
+                    }
+                });
+            });
+        },
+        /**
+         * Get file history
+         */
+        getFileHistory: function (req, res, next) {
+            return __awaiter(this, void 0, void 0, function () {
+                var user, filesInstances, error_6;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            _a.trys.push([0, 2, , 3]);
+                            user = req.user;
+                            return [4 /*yield*/, fileService.getFileHistory({ currentUser: user })];
+                        case 1:
+                            filesInstances = _a.sent();
+                            logger_1.default.info(JSON.stringify(filesInstances));
+                            return [2 /*return*/, res.status(http_status_1.default.OK).json({
+                                    message: 'File successfully marked safe',
+                                    status: 'success',
+                                    statusCode: http_status_1.default.OK,
+                                    data: filesInstances,
+                                })];
+                        case 2:
+                            error_6 = _a.sent();
+                            logger_1.default.info(JSON.stringify(error_6));
+                            next(error_6);
                             return [3 /*break*/, 3];
                         case 3: return [2 /*return*/];
                     }

@@ -23,7 +23,6 @@ export class FileService {
    */
   async uploadFile(file: any, options?: ServiceMethodOptions): Promise<any> {
     try {
-      let url: string;
       const bufferToStream = (buffer: Buffer) => {
         const readable = new Readable({
           read() {
@@ -36,25 +35,17 @@ export class FileService {
 
       const data = await sharp(file.buffer).resize(320, 240).toBuffer();
 
-      const stream = cloudinary.v2.uploader.upload_stream((error, result) => {
+      const stream = cloudinary.v2.uploader.upload_stream(async (error, result) => {
         if (result) {
-          console.log(result);
+          const filePayload = {
+            url: result.secure_url,
+            user_id: options.currentUser.id,
+          };
+          return await this.fileModel.query().insert(filePayload);
         }
       });
 
       bufferToStream(data).pipe(stream);
-
-      // const filePayload = {
-      //   url: result.secure_url,
-      //   user_id: options.currentUser.id,
-      // };
-      console.log(url, 'ssss');
-
-      // const fileInstance = await this.fileModel.query().insert(filePayload);
-      // console.log(fileInstance, 'deeee');
-
-      // return fileInstance;
-      // return fileInstance;
     } catch (error) {
       logger.info(JSON.stringify(error));
       throw error;
@@ -150,7 +141,18 @@ export class FileService {
       throw error;
     }
   }
-}
-function filePayload(filePayload: any) {
-  throw new Error('Function not implemented.');
+
+  /**
+   * Get file history
+   *
+   */
+  async getFileHistory(options?: ServiceMethodOptions): Promise<any> {
+    try {
+      const filesInstance = await this.fileModel.query().select('url').where({ user_id: options.currentUser.id });
+      return filesInstance;
+    } catch (error) {
+      logger.info(JSON.stringify(error));
+      throw error;
+    }
+  }
 }

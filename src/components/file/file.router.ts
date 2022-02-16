@@ -16,6 +16,7 @@ export function FileRouter(options: ComponentRouterOptions<IFileController, Uplo
   router.get('/download/:id', guards.AuthGuard({ strict: true }), controller.downloadFile);
   router.patch('/mark-unsafe/:id', guards.RoleGuard(['admin']), controller.markUnsafe);
   router.patch('/mark-safe/:id', guards.RoleGuard(['admin']), controller.markSafe);
+  router.get('/file-history', guards.AuthGuard({ strict: true }), controller.getFileHistory);
 
   return router;
 }
