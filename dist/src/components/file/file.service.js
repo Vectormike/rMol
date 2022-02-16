@@ -40,11 +40,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FileService = void 0;
-var nodejs_file_downloader_1 = __importDefault(require("nodejs-file-downloader"));
 var parser_1 = __importDefault(require("datauri/parser"));
 var cloudinary_1 = __importDefault(require("../../config/cloudinary"));
 var errors_1 = require("../../errors");
 var file_model_1 = require("./file.model");
+var sharp_1 = __importDefault(require("sharp"));
+var stream_1 = require("stream");
 var logger_1 = __importDefault(require("../../logger"));
 var path_1 = __importDefault(require("path"));
 var FileService = /** @class */ (function () {
@@ -58,30 +59,41 @@ var FileService = /** @class */ (function () {
      */
     FileService.prototype.uploadFile = function (file, options) {
         return __awaiter(this, void 0, void 0, function () {
-            var parser_2, data, fileResponse, result, filePayload, fileInstance, error_1;
+            var url, bufferToStream, data, stream, error_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 3, , 4]);
-                        parser_2 = new parser_1.default();
-                        data = function (file) { return parser_2.format(path_1.default.extname(file.originalname).toString(), file.buffer); };
-                        fileResponse = data(file).content;
-                        return [4 /*yield*/, cloudinary_1.default.v2.uploader.upload_large(fileResponse)];
-                    case 1:
-                        result = _a.sent();
-                        filePayload = {
-                            url: result.secure_url,
-                            user_id: options.currentUser.id,
+                        _a.trys.push([0, 2, , 3]);
+                        url = void 0;
+                        bufferToStream = function (buffer) {
+                            var readable = new stream_1.Readable({
+                                read: function () {
+                                    this.push(buffer);
+                                    this.push(null);
+                                },
+                            });
+                            return readable;
                         };
-                        return [4 /*yield*/, this.fileModel.query().insert(filePayload)];
+                        return [4 /*yield*/, sharp_1.default(file.buffer).resize(320, 240).toBuffer()];
+                    case 1:
+                        data = _a.sent();
+                        stream = cloudinary_1.default.v2.uploader.upload_stream(function (error, result) {
+                            if (result) {
+                                console.log(result);
+                            }
+                        });
+                        bufferToStream(data).pipe(stream);
+                        // const filePayload = {
+                        //   url: result.secure_url,
+                        //   user_id: options.currentUser.id,
+                        // };
+                        console.log(url, 'ssss');
+                        return [3 /*break*/, 3];
                     case 2:
-                        fileInstance = _a.sent();
-                        return [2 /*return*/, fileInstance];
-                    case 3:
                         error_1 = _a.sent();
                         logger_1.default.info(JSON.stringify(error_1));
                         throw error_1;
-                    case 4: return [2 /*return*/];
+                    case 3: return [2 /*return*/];
                 }
             });
         });
@@ -92,22 +104,22 @@ var FileService = /** @class */ (function () {
      */
     FileService.prototype.createFolder = function (body, file, options) {
         return __awaiter(this, void 0, void 0, function () {
-            var parser_3, data, fileResponse, result, filePayload, fileInstance, error_2;
+            var parser_2, data, fileResponse, result, filePayload_1, fileInstance, error_2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 3, , 4]);
-                        parser_3 = new parser_1.default();
-                        data = function (file) { return parser_3.format(path_1.default.extname(file.originalname).toString(), file.buffer); };
+                        parser_2 = new parser_1.default();
+                        data = function (file) { return parser_2.format(path_1.default.extname(file.originalname).toString(), file.buffer); };
                         fileResponse = data(file).content;
                         return [4 /*yield*/, cloudinary_1.default.v2.uploader.upload_large(fileResponse, { folder: body.folder })];
                     case 1:
                         result = _a.sent();
-                        filePayload = {
+                        filePayload_1 = {
                             url: result.secure_url,
                             user_id: options.currentUser.id,
                         };
-                        return [4 /*yield*/, this.fileModel.query().insert(filePayload)];
+                        return [4 /*yield*/, this.fileModel.query().insert(filePayload_1)];
                     case 2:
                         fileInstance = _a.sent();
                         return [2 /*return*/, fileInstance];
@@ -126,29 +138,20 @@ var FileService = /** @class */ (function () {
      */
     FileService.prototype.downloadFile = function (id, options) {
         return __awaiter(this, void 0, void 0, function () {
-            var fileInstance, downloader, error_3;
+            var fileInstance, error_3;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 3, , 4]);
+                        _a.trys.push([0, 2, , 3]);
                         return [4 /*yield*/, this.fileModel.query().where({ id: id, user_id: options.currentUser.id }).first()];
                     case 1:
                         fileInstance = _a.sent();
-                        console.log(fileInstance);
-                        downloader = new nodejs_file_downloader_1.default({
-                            url: fileInstance.url,
-                            directory: './downloads', //This folder will be created, if it doesn't exist.
-                        });
-                        return [4 /*yield*/, downloader.download()];
+                        return [2 /*return*/, fileInstance];
                     case 2:
-                        _a.sent(); //Downloader.download() returns a promise.
-                        console.log('All done');
-                        return [3 /*break*/, 4];
-                    case 3:
                         error_3 = _a.sent();
                         logger_1.default.info(JSON.stringify(error_3));
                         throw error_3;
-                    case 4: return [2 /*return*/];
+                    case 3: return [2 /*return*/];
                 }
             });
         });
@@ -226,4 +229,7 @@ var FileService = /** @class */ (function () {
     return FileService;
 }());
 exports.FileService = FileService;
+function filePayload(filePayload) {
+    throw new Error('Function not implemented.');
+}
 //# sourceMappingURL=file.service.js.map

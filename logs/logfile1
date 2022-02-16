@@ -20,3 +20,409 @@ info: Request🏷️: Feb-16-2022 12:48:03: {"errorno":"ETIMEDOUT","code":"ETIME
 info: Request🏷️: Feb-16-2022 12:48:03: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
 info: Request🏷️: Feb-16-2022 12:48:03: ::ffff:127.0.0.1 - - [16/Feb/2022:11:48:03 +0000] "POST /api/auth/register HTTP/1.1" 500 48 "-" "node-superagent/3.8.3"
 
+info: Request🏷️: Feb-16-2022 12:51:27: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:51:27: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:51:27: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
+info: Request🏷️: Feb-16-2022 12:51:27: ::ffff:127.0.0.1 - - [16/Feb/2022:11:51:27 +0000] "POST /api/auth/register HTTP/1.1" 500 48 "-" "node-superagent/3.8.3"
+
+info: Request🏷️: Feb-16-2022 12:54:08: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:54:08: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:54:08: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
+info: Request🏷️: Feb-16-2022 12:54:08: ::ffff:127.0.0.1 - - [16/Feb/2022:11:54:08 +0000] "POST /api/auth/register HTTP/1.1" 500 48 "-" "node-superagent/3.8.3"
+
+info: Request🏷️: Feb-16-2022 12:55:33: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:55:33: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:55:33: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
+info: Request🏷️: Feb-16-2022 12:55:33: ::ffff:127.0.0.1 - - [16/Feb/2022:11:55:33 +0000] "POST /api/auth/register HTTP/1.1" 500 48 "-" "node-superagent/3.8.3"
+
+info: Request🏷️: Feb-16-2022 12:57:20: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:57:20: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:57:20: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
+info: Request🏷️: Feb-16-2022 12:57:20: ::ffff:127.0.0.1 - - [16/Feb/2022:11:57:20 +0000] "POST /api/auth/register HTTP/1.1" 500 48 "-" "node-superagent/3.8.3"
+
+info: Request🏷️: Feb-16-2022 13:00:06: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 13:00:32: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 13:00:32: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 13:00:32: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
+info: Request🏷️: Feb-16-2022 13:00:32: ::ffff:127.0.0.1 - - [16/Feb/2022:12:00:32 +0000] "POST /api/auth/register HTTP/1.1" 500 48 "-" "node-superagent/3.8.3"
+
+info: Request🏷️: Feb-16-2022 13:05:19: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 13:05:19: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 13:05:19: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
+info: Request🏷️: Feb-16-2022 13:05:19: ::ffff:127.0.0.1 - - [16/Feb/2022:12:05:19 +0000] "POST /api/auth/register HTTP/1.1" 500 48 "-" "node-superagent/3.8.3"
+
+error: Request🏷️: Feb-16-2022 13:08:46: uncaughtException: listen EADDRINUSE: address already in use :::8000
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Function.listen (/Users/macbookpro/Desktop/Projects/korapay/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/macbookpro/Desktop/Projects/korapay/dist/src/server.js:14:15)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)
+error: Request🏷️: Feb-16-2022 13:09:15: uncaughtException: listen EADDRINUSE: address already in use :::8000
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Function.listen (/Users/macbookpro/Desktop/Projects/korapay/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/macbookpro/Desktop/Projects/korapay/dist/src/server.js:14:15)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)
+info: Request🏷️: Feb-16-2022 13:09:43: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 13:09:43: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 13:09:43: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
+info: Request🏷️: Feb-16-2022 13:09:43: ::ffff:127.0.0.1 - - [16/Feb/2022:12:09:43 +0000] "POST /api/auth/register HTTP/1.1" 500 48 "-" "node-superagent/3.8.3"
+
+info: Request🏷️: Feb-16-2022 13:11:10: {"name":"DBError","nativeError":{"length":104,"name":"error","severity":"ERROR","code":"42P01","position":"13","file":"parse_relation.c","line":"1376","routine":"parserOpenTable"},"client":"postgres"}
+info: Request🏷️: Feb-16-2022 13:11:10: {"name":"DBError","nativeError":{"length":104,"name":"error","severity":"ERROR","code":"42P01","position":"13","file":"parse_relation.c","line":"1376","routine":"parserOpenTable"},"client":"postgres"}
+info: Request🏷️: Feb-16-2022 13:11:10: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
+info: Request🏷️: Feb-16-2022 13:11:10: ::ffff:127.0.0.1 - - [16/Feb/2022:12:11:10 +0000] "POST /api/auth/register HTTP/1.1" 500 180 "-" "node-superagent/3.8.3"
+
+info: Request🏷️: Feb-16-2022 13:11:10: {"name":"DBError","nativeError":{"length":104,"name":"error","severity":"ERROR","code":"42P01","position":"23","file":"parse_relation.c","line":"1376","routine":"parserOpenTable"},"client":"postgres"}
+info: Request🏷️: Feb-16-2022 13:11:10: ::ffff:127.0.0.1 - - [16/Feb/2022:12:11:10 +0000] "POST /api/auth/login HTTP/1.1" 500 121 "-" "node-superagent/3.8.3"
+
+info: Request🏷️: Feb-16-2022 13:12:40: {"name":"DBError","nativeError":{"length":104,"name":"error","severity":"ERROR","code":"42P01","position":"13","file":"parse_relation.c","line":"1376","routine":"parserOpenTable"},"client":"postgres"}
+info: Request🏷️: Feb-16-2022 13:12:40: {"name":"DBError","nativeError":{"length":104,"name":"error","severity":"ERROR","code":"42P01","position":"13","file":"parse_relation.c","line":"1376","routine":"parserOpenTable"},"client":"postgres"}
+info: Request🏷️: Feb-16-2022 13:12:40: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
+info: Request🏷️: Feb-16-2022 13:12:40: ::ffff:127.0.0.1 - - [16/Feb/2022:12:12:40 +0000] "POST /api/auth/register HTTP/1.1" 500 180 "-" "node-superagent/3.8.3"
+
+info: Request🏷️: Feb-16-2022 13:12:40: {"name":"DBError","nativeError":{"length":104,"name":"error","severity":"ERROR","code":"42P01","position":"23","file":"parse_relation.c","line":"1376","routine":"parserOpenTable"},"client":"postgres"}
+info: Request🏷️: Feb-16-2022 13:12:40: ::ffff:127.0.0.1 - - [16/Feb/2022:12:12:40 +0000] "POST /api/auth/login HTTP/1.1" 500 121 "-" "node-superagent/3.8.3"
+
+error: Request🏷️: Feb-16-2022 22:09:11: uncaughtException: listen EADDRINUSE: address already in use :::8000
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Function.listen (/Users/macbookpro/Desktop/Projects/korapay/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/macbookpro/Desktop/Projects/korapay/dist/src/server.js:14:15)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)
+info: Request🏷️: Feb-16-2022 22:09:46: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:10:02: {"url":"https://res.cloudinary.com/vectormike/image/upload/v1645045803/n4bu03j12uqb9vnv8zh2.png","user_id":1,"id":26}
+info: Request🏷️: Feb-16-2022 22:10:02: ::1 - - [16/Feb/2022:21:10:02 +0000] "POST /api/file/upload HTTP/1.1" 200 201 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:11:09: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:11:18: {"url":"https://res.cloudinary.com/vectormike/image/upload/v1645045878/ejvlq6yn8bukyp2tgwza.png","user_id":1,"id":27}
+info: Request🏷️: Feb-16-2022 22:11:18: ::1 - - [16/Feb/2022:21:11:18 +0000] "POST /api/file/upload HTTP/1.1" 200 201 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:11:35: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:11:48: {"url":"https://res.cloudinary.com/vectormike/image/upload/v1645045908/xcbmbrklxuzy2icymufa.png","user_id":1,"id":28}
+info: Request🏷️: Feb-16-2022 22:11:48: ::1 - - [16/Feb/2022:21:11:48 +0000] "POST /api/file/upload HTTP/1.1" 200 201 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:16:23: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:16:35: {"url":"https://res.cloudinary.com/vectormike/image/upload/v1645046195/vl7pj2kjgu2yjztuqvs5.png","user_id":1,"id":29}
+info: Request🏷️: Feb-16-2022 22:16:35: ::1 - - [16/Feb/2022:21:16:35 +0000] "POST /api/file/upload HTTP/1.1" 200 201 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:18:54: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:18:58: {}
+info: Request🏷️: Feb-16-2022 22:18:58: {}
+info: Request🏷️: Feb-16-2022 22:18:58: request>>{}
+info: Request🏷️: Feb-16-2022 22:18:58: ::1 - - [16/Feb/2022:21:18:58 +0000] "POST /api/file/upload HTTP/1.1" 500 86 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:19:11: {}
+info: Request🏷️: Feb-16-2022 22:19:11: {}
+info: Request🏷️: Feb-16-2022 22:19:11: request>>{}
+info: Request🏷️: Feb-16-2022 22:19:11: ::1 - - [16/Feb/2022:21:19:11 +0000] "POST /api/file/upload HTTP/1.1" 500 86 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:19:34: {}
+info: Request🏷️: Feb-16-2022 22:19:34: {}
+info: Request🏷️: Feb-16-2022 22:19:34: request>>{}
+info: Request🏷️: Feb-16-2022 22:19:34: ::1 - - [16/Feb/2022:21:19:34 +0000] "POST /api/file/upload HTTP/1.1" 500 86 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:19:53: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:19:55: {}
+info: Request🏷️: Feb-16-2022 22:19:55: {}
+info: Request🏷️: Feb-16-2022 22:19:55: request>>{}
+info: Request🏷️: Feb-16-2022 22:19:55: ::1 - - [16/Feb/2022:21:19:55 +0000] "POST /api/file/upload HTTP/1.1" 500 86 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:20:10: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:20:12: {}
+info: Request🏷️: Feb-16-2022 22:20:12: {}
+info: Request🏷️: Feb-16-2022 22:20:12: request>>{}
+info: Request🏷️: Feb-16-2022 22:20:12: ::1 - - [16/Feb/2022:21:20:12 +0000] "POST /api/file/upload HTTP/1.1" 500 86 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:20:23: {}
+info: Request🏷️: Feb-16-2022 22:20:23: {}
+info: Request🏷️: Feb-16-2022 22:20:23: request>>{}
+info: Request🏷️: Feb-16-2022 22:20:23: ::1 - - [16/Feb/2022:21:20:23 +0000] "POST /api/file/upload HTTP/1.1" 500 86 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:20:24: {}
+info: Request🏷️: Feb-16-2022 22:20:24: {}
+info: Request🏷️: Feb-16-2022 22:20:24: request>>{}
+info: Request🏷️: Feb-16-2022 22:20:24: ::1 - - [16/Feb/2022:21:20:24 +0000] "POST /api/file/upload HTTP/1.1" 500 86 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:20:24: {}
+info: Request🏷️: Feb-16-2022 22:20:24: {}
+info: Request🏷️: Feb-16-2022 22:20:24: request>>{}
+info: Request🏷️: Feb-16-2022 22:20:24: ::1 - - [16/Feb/2022:21:20:24 +0000] "POST /api/file/upload HTTP/1.1" 500 86 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:20:37: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:20:40: {}
+info: Request🏷️: Feb-16-2022 22:20:40: {}
+info: Request🏷️: Feb-16-2022 22:20:40: request>>{}
+info: Request🏷️: Feb-16-2022 22:20:40: ::1 - - [16/Feb/2022:21:20:40 +0000] "POST /api/file/upload HTTP/1.1" 500 86 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:20:42: {}
+info: Request🏷️: Feb-16-2022 22:20:42: {}
+info: Request🏷️: Feb-16-2022 22:20:42: request>>{}
+info: Request🏷️: Feb-16-2022 22:20:42: ::1 - - [16/Feb/2022:21:20:42 +0000] "POST /api/file/upload HTTP/1.1" 500 86 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:20:52: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:21:03: {"url":"https://res.cloudinary.com/vectormike/image/upload/v1645046464/wuwcwl7f8oz3s0tcjzyp.jpg","user_id":1,"id":30}
+info: Request🏷️: Feb-16-2022 22:21:03: ::1 - - [16/Feb/2022:21:21:03 +0000] "POST /api/file/upload HTTP/1.1" 200 201 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:27:06: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:27:08: request>>{}
+info: Request🏷️: Feb-16-2022 22:27:08: ::1 - - [16/Feb/2022:21:27:08 +0000] "POST /api/file/upload HTTP/1.1" 500 142 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:27:13: {"name":"DBError","nativeError":{"length":104,"name":"error","severity":"ERROR","code":"42P01","position":"23","file":"parse_relation.c","line":"1376","routine":"parserOpenTable"},"client":"postgres"}
+info: Request🏷️: Feb-16-2022 22:27:13: ::1 - - [16/Feb/2022:21:27:13 +0000] "POST /api/auth/login HTTP/1.1" 500 330 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:27:20: {"name":"DBError","nativeError":{"length":104,"name":"error","severity":"ERROR","code":"42P01","position":"23","file":"parse_relation.c","line":"1376","routine":"parserOpenTable"},"client":"postgres"}
+info: Request🏷️: Feb-16-2022 22:27:20: ::1 - - [16/Feb/2022:21:27:20 +0000] "POST /api/auth/login HTTP/1.1" 500 330 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:27:23: {"name":"DBError","nativeError":{"length":104,"name":"error","severity":"ERROR","code":"42P01","position":"13","file":"parse_relation.c","line":"1376","routine":"parserOpenTable"},"client":"postgres"}
+info: Request🏷️: Feb-16-2022 22:27:23: {"name":"DBError","nativeError":{"length":104,"name":"error","severity":"ERROR","code":"42P01","position":"13","file":"parse_relation.c","line":"1376","routine":"parserOpenTable"},"client":"postgres"}
+info: Request🏷️: Feb-16-2022 22:27:23: request>>{"full_name":"victorjonah199@gmail.com","email":"victorjonah199@gmail.com","password":"12345678a"}
+info: Request🏷️: Feb-16-2022 22:27:23: ::1 - - [16/Feb/2022:21:27:23 +0000] "POST /api/auth/register HTTP/1.1" 500 389 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:30:06: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:30:07: ::1 - - [16/Feb/2022:21:30:07 +0000] "POST /api/auth/register HTTP/1.1" 201 132 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:30:13: request>>{}
+info: Request🏷️: Feb-16-2022 22:30:13: ::1 - - [16/Feb/2022:21:30:13 +0000] "POST /api/file/upload HTTP/1.1" 500 142 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:30:14: request>>{}
+info: Request🏷️: Feb-16-2022 22:30:14: ::1 - - [16/Feb/2022:21:30:14 +0000] "POST /api/file/upload HTTP/1.1" 500 142 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:30:17: ::1 - - [16/Feb/2022:21:30:17 +0000] "POST /api/auth/login HTTP/1.1" 200 628 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:30:42: {"url":"https://res.cloudinary.com/vectormike/image/upload/v1645047042/kz2nfclwfpivpgv2dee0.jpg","user_id":1,"id":1}
+info: Request🏷️: Feb-16-2022 22:30:42: ::1 - - [16/Feb/2022:21:30:42 +0000] "POST /api/file/upload HTTP/1.1" 200 200 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:31:11: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:31:16: {"url":"https://res.cloudinary.com/vectormike/image/upload/v1645047076/p2bfi9fwvpbdzxe77yez.jpg","user_id":1,"id":2}
+info: Request🏷️: Feb-16-2022 22:31:16: ::1 - - [16/Feb/2022:21:31:16 +0000] "POST /api/file/upload HTTP/1.1" 200 200 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:32:09: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:32:16: {"url":"https://res.cloudinary.com/vectormike/image/upload/v1645047137/jgpplcey5yro1vwrfkvb.jpg","user_id":1,"id":3}
+info: Request🏷️: Feb-16-2022 22:32:16: ::1 - - [16/Feb/2022:21:32:16 +0000] "POST /api/file/upload HTTP/1.1" 200 200 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:34:37: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:34:47: {"url":"https://res.cloudinary.com/vectormike/image/upload/v1645047288/scav9kfmrvkwnlprzh19.jpg","user_id":1,"id":4}
+info: Request🏷️: Feb-16-2022 22:34:47: ::1 - - [16/Feb/2022:21:34:47 +0000] "POST /api/file/upload HTTP/1.1" 200 200 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:35:26: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:35:37: {"url":"https://res.cloudinary.com/vectormike/image/upload/v1645047337/oun015hufcryvzppldar.jpg","user_id":1,"id":5}
+info: Request🏷️: Feb-16-2022 22:35:37: ::1 - - [16/Feb/2022:21:35:37 +0000] "POST /api/file/upload HTTP/1.1" 200 200 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:37:13: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:37:20: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:37:28: {"url":"https://res.cloudinary.com/vectormike/image/upload/v1645047448/wfqv8tjaf6c0agzj9kbc.jpg","user_id":1,"id":6}
+info: Request🏷️: Feb-16-2022 22:37:28: ::1 - - [16/Feb/2022:21:37:28 +0000] "POST /api/file/upload HTTP/1.1" 200 200 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:38:41: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:40:03: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:40:04: undefined
+info: Request🏷️: Feb-16-2022 22:40:04: ::1 - - [16/Feb/2022:21:40:04 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:40:57: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:40:59: undefined
+info: Request🏷️: Feb-16-2022 22:40:59: ::1 - - [16/Feb/2022:21:40:59 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:45:42: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:45:43: undefined
+info: Request🏷️: Feb-16-2022 22:45:43: ::1 - - [16/Feb/2022:21:45:43 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+error: Request🏷️: Feb-16-2022 22:45:43: uncaughtException: The "chunk" argument must be of type string or an instance of Buffer or Uint8Array. Received function data
+TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be of type string or an instance of Buffer or Uint8Array. Received function data
+    at readableAddChunk (internal/streams/readable.js:255:13)
+    at Readable.push (internal/streams/readable.js:223:10)
+    at Readable.read [as _read] (/Users/macbookpro/Desktop/Projects/korapay/dist/src/components/file/file.service.js:70:42)
+    at Readable.read (internal/streams/readable.js:481:10)
+    at resume_ (internal/streams/readable.js:968:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+info: Request🏷️: Feb-16-2022 22:46:18: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:46:27: undefined
+info: Request🏷️: Feb-16-2022 22:46:27: ::1 - - [16/Feb/2022:21:46:27 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+error: Request🏷️: Feb-16-2022 22:46:27: uncaughtException: The "chunk" argument must be of type string or an instance of Buffer or Uint8Array. Received function data
+TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be of type string or an instance of Buffer or Uint8Array. Received function data
+    at readableAddChunk (internal/streams/readable.js:255:13)
+    at Readable.push (internal/streams/readable.js:223:10)
+    at Readable.read [as _read] (/Users/macbookpro/Desktop/Projects/korapay/dist/src/components/file/file.service.js:70:42)
+    at Readable.read (internal/streams/readable.js:481:10)
+    at resume_ (internal/streams/readable.js:968:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+info: Request🏷️: Feb-16-2022 22:48:04: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:48:07: undefined
+info: Request🏷️: Feb-16-2022 22:48:07: ::1 - - [16/Feb/2022:21:48:07 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:48:29: {}
+info: Request🏷️: Feb-16-2022 22:48:29: {}
+info: Request🏷️: Feb-16-2022 22:48:29: request>>{}
+info: Request🏷️: Feb-16-2022 22:48:29: ::1 - - [16/Feb/2022:21:48:29 +0000] "POST /api/file/upload HTTP/1.1" 500 88 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:48:31: {}
+info: Request🏷️: Feb-16-2022 22:48:31: {}
+info: Request🏷️: Feb-16-2022 22:48:31: request>>{}
+info: Request🏷️: Feb-16-2022 22:48:31: ::1 - - [16/Feb/2022:21:48:31 +0000] "POST /api/file/upload HTTP/1.1" 500 88 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:48:32: {}
+info: Request🏷️: Feb-16-2022 22:48:32: {}
+info: Request🏷️: Feb-16-2022 22:48:32: request>>{}
+info: Request🏷️: Feb-16-2022 22:48:32: ::1 - - [16/Feb/2022:21:48:32 +0000] "POST /api/file/upload HTTP/1.1" 500 88 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:48:49: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:48:51: {}
+info: Request🏷️: Feb-16-2022 22:48:51: {}
+info: Request🏷️: Feb-16-2022 22:48:51: request>>{}
+info: Request🏷️: Feb-16-2022 22:48:51: ::1 - - [16/Feb/2022:21:48:51 +0000] "POST /api/file/upload HTTP/1.1" 500 88 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:48:52: {}
+info: Request🏷️: Feb-16-2022 22:48:52: {}
+info: Request🏷️: Feb-16-2022 22:48:52: request>>{}
+info: Request🏷️: Feb-16-2022 22:48:52: ::1 - - [16/Feb/2022:21:48:52 +0000] "POST /api/file/upload HTTP/1.1" 500 88 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:48:59: undefined
+info: Request🏷️: Feb-16-2022 22:48:59: ::1 - - [16/Feb/2022:21:48:59 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:49:52: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:50:00: {}
+info: Request🏷️: Feb-16-2022 22:50:00: {}
+info: Request🏷️: Feb-16-2022 22:50:00: request>>{}
+info: Request🏷️: Feb-16-2022 22:50:00: ::1 - - [16/Feb/2022:21:50:00 +0000] "POST /api/file/upload HTTP/1.1" 500 126 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:50:15: {}
+info: Request🏷️: Feb-16-2022 22:50:15: {}
+info: Request🏷️: Feb-16-2022 22:50:15: request>>{}
+info: Request🏷️: Feb-16-2022 22:50:15: ::1 - - [16/Feb/2022:21:50:15 +0000] "POST /api/file/upload HTTP/1.1" 500 88 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:50:16: {}
+info: Request🏷️: Feb-16-2022 22:50:16: {}
+info: Request🏷️: Feb-16-2022 22:50:16: request>>{}
+info: Request🏷️: Feb-16-2022 22:50:16: ::1 - - [16/Feb/2022:21:50:16 +0000] "POST /api/file/upload HTTP/1.1" 500 88 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:50:50: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:50:53: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:50:58: {}
+info: Request🏷️: Feb-16-2022 22:50:58: {}
+info: Request🏷️: Feb-16-2022 22:50:58: request>>{}
+info: Request🏷️: Feb-16-2022 22:50:58: ::1 - - [16/Feb/2022:21:50:58 +0000] "POST /api/file/upload HTTP/1.1" 500 88 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:57:36: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 22:57:36: {}
+info: Request🏷️: Feb-16-2022 22:57:36: {}
+info: Request🏷️: Feb-16-2022 22:57:36: request>>{}
+info: Request🏷️: Feb-16-2022 22:57:36: ::1 - - [16/Feb/2022:21:57:36 +0000] "POST /api/file/upload HTTP/1.1" 500 88 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:57:37: {}
+info: Request🏷️: Feb-16-2022 22:57:37: {}
+info: Request🏷️: Feb-16-2022 22:57:37: request>>{}
+info: Request🏷️: Feb-16-2022 22:57:37: ::1 - - [16/Feb/2022:21:57:37 +0000] "POST /api/file/upload HTTP/1.1" 500 88 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:58:45: {}
+info: Request🏷️: Feb-16-2022 22:58:45: {}
+info: Request🏷️: Feb-16-2022 22:58:45: request>>{}
+info: Request🏷️: Feb-16-2022 22:58:45: ::1 - - [16/Feb/2022:21:58:45 +0000] "POST /api/file/upload HTTP/1.1" 500 126 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:58:58: undefined
+info: Request🏷️: Feb-16-2022 22:58:58: ::1 - - [16/Feb/2022:21:58:58 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 22:59:37: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:00:56: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:01:05: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:01:08: undefined
+info: Request🏷️: Feb-16-2022 23:01:08: ::1 - - [16/Feb/2022:22:01:08 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:01:10: undefined
+info: Request🏷️: Feb-16-2022 23:01:10: ::1 - - [16/Feb/2022:22:01:10 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:01:11: undefined
+info: Request🏷️: Feb-16-2022 23:01:11: ::1 - - [16/Feb/2022:22:01:11 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:01:33: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:01:35: undefined
+info: Request🏷️: Feb-16-2022 23:01:35: ::1 - - [16/Feb/2022:22:01:35 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:02:10: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:02:48: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:02:56: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:03:07: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:03:11: {}
+info: Request🏷️: Feb-16-2022 23:03:11: {}
+info: Request🏷️: Feb-16-2022 23:03:11: request>>{}
+info: Request🏷️: Feb-16-2022 23:03:11: ::1 - - [16/Feb/2022:22:03:11 +0000] "POST /api/file/upload HTTP/1.1" 500 60 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:03:28: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:03:32: {}
+info: Request🏷️: Feb-16-2022 23:03:32: {}
+info: Request🏷️: Feb-16-2022 23:03:32: request>>{}
+info: Request🏷️: Feb-16-2022 23:03:32: ::1 - - [16/Feb/2022:22:03:32 +0000] "POST /api/file/upload HTTP/1.1" 500 60 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:03:50: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:03:52: {}
+info: Request🏷️: Feb-16-2022 23:03:52: {}
+info: Request🏷️: Feb-16-2022 23:03:52: request>>{}
+info: Request🏷️: Feb-16-2022 23:03:52: ::1 - - [16/Feb/2022:22:03:52 +0000] "POST /api/file/upload HTTP/1.1" 500 60 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:04:13: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:04:16: {}
+info: Request🏷️: Feb-16-2022 23:04:16: {}
+info: Request🏷️: Feb-16-2022 23:04:16: request>>{}
+info: Request🏷️: Feb-16-2022 23:04:16: ::1 - - [16/Feb/2022:22:04:16 +0000] "POST /api/file/upload HTTP/1.1" 500 60 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:06:03: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:06:07: undefined
+info: Request🏷️: Feb-16-2022 23:06:07: ::1 - - [16/Feb/2022:22:06:07 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:06:25: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:06:27: undefined
+info: Request🏷️: Feb-16-2022 23:06:27: ::1 - - [16/Feb/2022:22:06:27 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:07:15: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:07:18: undefined
+info: Request🏷️: Feb-16-2022 23:07:18: ::1 - - [16/Feb/2022:22:07:18 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:07:34: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:07:36: undefined
+info: Request🏷️: Feb-16-2022 23:07:36: ::1 - - [16/Feb/2022:22:07:36 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:08:15: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:08:18: undefined
+info: Request🏷️: Feb-16-2022 23:08:18: ::1 - - [16/Feb/2022:22:08:18 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:08:31: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:09:18: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:09:24: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:09:25: undefined
+info: Request🏷️: Feb-16-2022 23:09:25: ::1 - - [16/Feb/2022:22:09:25 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:10:25: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:10:27: undefined
+info: Request🏷️: Feb-16-2022 23:10:27: ::1 - - [16/Feb/2022:22:10:27 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:10:45: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:10:46: undefined
+info: Request🏷️: Feb-16-2022 23:10:46: ::1 - - [16/Feb/2022:22:10:46 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:13:59: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:14:06: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:14:11: undefined
+info: Request🏷️: Feb-16-2022 23:14:11: ::1 - - [16/Feb/2022:22:14:11 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+
+info: Request🏷️: Feb-16-2022 23:14:40: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 23:14:42: undefined
+info: Request🏷️: Feb-16-2022 23:14:42: ::1 - - [16/Feb/2022:22:14:42 +0000] "POST /api/file/upload HTTP/1.1" 200 76 "-" "PostmanRuntime/7.29.0"
+

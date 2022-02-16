@@ -7,8 +7,12 @@ import { BadRequestError, UnauthorizedError, NotFoundError, ForbiddenError } fro
 import { File } from './file.model';
 import { ServiceMethodOptions } from '../../shared/types/ServiceMethodOptions';
 import { redisClient } from '../../redis.connection';
+import sharp from 'sharp';
+import { Readable } from 'stream';
 import logger from '../../logger';
 import path from 'path';
+import { PartialModelObject } from 'objection';
+import { error } from 'console';
 
 export class FileService {
   constructor(private readonly fileModel = File) {}
@@ -19,21 +23,38 @@ export class FileService {
    */
   async uploadFile(file: any, options?: ServiceMethodOptions): Promise<any> {
     try {
-      const parser = new dataUri();
-      const data = (file: { originalname: string; buffer: any }) => parser.format(path.extname(file.originalname).toString(), file.buffer);
-
-      const fileResponse = data(file).content;
-
-      const result = await cloudinary.v2.uploader.upload_large(fileResponse);
-
-      const filePayload = {
-        url: result.secure_url,
-        user_id: options.currentUser.id,
+      let url: string;
+      const bufferToStream = (buffer: Buffer) => {
+        const readable = new Readable({
+          read() {
+            this.push(buffer);
+            this.push(null);
+          },
+        });
+        return readable;
       };
 
-      const fileInstance = await this.fileModel.query().insert(filePayload);
+      const data = await sharp(file.buffer).resize(320, 240).toBuffer();
 
-      return fileInstance;
+      const stream = cloudinary.v2.uploader.upload_stream((error, result) => {
+        if (result) {
+          console.log(result);
+        }
+      });
+
+      bufferToStream(data).pipe(stream);
+
+      // const filePayload = {
+      //   url: result.secure_url,
+      //   user_id: options.currentUser.id,
+      // };
+      console.log(url, 'ssss');
+
+      // const fileInstance = await this.fileModel.query().insert(filePayload);
+      // console.log(fileInstance, 'deeee');
+
+      // return fileInstance;
+      // return fileInstance;
     } catch (error) {
       logger.info(JSON.stringify(error));
       throw error;
@@ -74,15 +95,7 @@ export class FileService {
   async downloadFile(id: string, options?: ServiceMethodOptions): Promise<any> {
     try {
       const fileInstance = await this.fileModel.query().where({ id, user_id: options.currentUser.id }).first();
-      console.log(fileInstance);
-
-      const downloader = new Downloader({
-        url: fileInstance.url,
-        directory: './downloads', //This folder will be created, if it doesn't exist.
-      });
-      await downloader.download(); //Downloader.download() returns a promise.
-
-      console.log('All done');
+      return fileInstance;
     } catch (error) {
       logger.info(JSON.stringify(error));
       throw error;
@@ -137,4 +150,7 @@ export class FileService {
       throw error;
     }
   }
+}
+function filePayload(filePayload: any) {
+  throw new Error('Function not implemented.');
 }

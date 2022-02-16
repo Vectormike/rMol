@@ -29,7 +29,7 @@ module.exports = {
         },
     },
     test: {
-        client: 'mysql2',
+        client: 'pg',
         connection: {
             database: process.env.DB_NAME,
             user: process.env.DB_USERNAME,
