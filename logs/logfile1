@@ -1,0 +1,22 @@
+info: Request🏷️: Feb-16-2022 12:10:57: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 12:19:54: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 12:20:40: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 12:20:59: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 12:21:09: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 12:21:28: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 12:22:02: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:22:02: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:22:02: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
+info: Request🏷️: Feb-16-2022 12:22:02: ::ffff:127.0.0.1 - - [16/Feb/2022:11:22:02 +0000] "POST /api/auth/register HTTP/1.1" 500 48 "-" "node-superagent/3.8.3"
+
+info: Request🏷️: Feb-16-2022 12:26:21: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:26:21: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:26:21: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
+info: Request🏷️: Feb-16-2022 12:26:21: ::ffff:127.0.0.1 - - [16/Feb/2022:11:26:21 +0000] "POST /api/auth/register HTTP/1.1" 500 48 "-" "node-superagent/3.8.3"
+
+info: Request🏷️: Feb-16-2022 12:47:09: Server server started at http://localhost:8000
+info: Request🏷️: Feb-16-2022 12:48:03: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:48:03: {"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}
+info: Request🏷️: Feb-16-2022 12:48:03: request>>{"email":"victorjonah199@gmail.com","full_name":"Victor Jonah","password":"Redeemer"}
+info: Request🏷️: Feb-16-2022 12:48:03: ::ffff:127.0.0.1 - - [16/Feb/2022:11:48:03 +0000] "POST /api/auth/register HTTP/1.1" 500 48 "-" "node-superagent/3.8.3"
+

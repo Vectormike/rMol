@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../src/components/question/index.ts"],"names":[],"mappings":";;;;;;AACA,+DAAyC;AACzC,6DAAkE;AAClE,qDAAmD;AACnD,uDAAqD;AAIxC,QAAA,eAAe,GAAG,IAAI,kCAAe,EAAE,CAAC;AAExC,QAAA,kBAAkB,GAAG,+CAAyB,CAAC,uBAAe,CAAC,CAAC;AAEhE,QAAA,cAAc,GAAG,gCAAc,CAAC;IAC3C,UAAU,EAAE,0BAAkB;IAC9B,MAAM,EAAE,gBAAM;CACf,CAAC,CAAC"}
