@@ -24,14 +24,19 @@ describe('File Upload', () => {
   //   });
 
   it('should not download a file unless authorized', async (done) => {
-    // await insertFiles([fileOne]);
-    await request(app).get(`/api/file/download/${1}`).expect(401);
+    await insertFiles([fileOne]);
+    console.log(fileOne, 'kkkkk');
+
+    await request(app).get(`/api/file/download/${fileOne.id}`).expect(401);
     done();
-  }, 50000);
+  });
 
   it('should mark a file unsafe', async (done) => {
     await insertFiles([fileTwo]);
-    const res = await request(app).get(`/api/file/mark-unsafe/${1}`).send();
+    console.log(fileTwo, 'lllllll');
+
+    const res = await request(app).patch(`/api/file/mark-unsafe/${fileTwo.id}`).send();
+    console.log(res);
 
     expect(res.status).toBe(200);
     expect(res.body.message).toEqual('File successfully marked unsafe');

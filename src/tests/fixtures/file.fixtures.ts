@@ -12,7 +12,7 @@ const fileTwo = {
   id: 2,
   user_id: 1,
   url: faker.internet.url(),
-  safe: faker.datatype.boolean(),
+  safe: true,
 };
 
 const insertFiles = async (files) => {
