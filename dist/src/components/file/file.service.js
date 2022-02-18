@@ -59,12 +59,12 @@ var FileService = /** @class */ (function () {
      */
     FileService.prototype.uploadFile = function (file, options) {
         return __awaiter(this, void 0, void 0, function () {
-            var url, bufferToStream, data, stream, error_1;
+            var bufferToStream, data, stream, error_1;
+            var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        url = void 0;
                         bufferToStream = function (buffer) {
                             var readable = new stream_1.Readable({
                                 read: function () {
@@ -77,17 +77,23 @@ var FileService = /** @class */ (function () {
                         return [4 /*yield*/, sharp_1.default(file.buffer).resize(320, 240).toBuffer()];
                     case 1:
                         data = _a.sent();
-                        stream = cloudinary_1.default.v2.uploader.upload_stream(function (error, result) {
-                            if (result) {
-                                console.log(result);
-                            }
-                        });
+                        stream = cloudinary_1.default.v2.uploader.upload_stream(function (error, result) { return __awaiter(_this, void 0, void 0, function () {
+                            var filePayload;
+                            return __generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0:
+                                        if (!result) return [3 /*break*/, 2];
+                                        filePayload = {
+                                            url: result.secure_url,
+                                            user_id: options.currentUser.id,
+                                        };
+                                        return [4 /*yield*/, this.fileModel.query().insert(filePayload)];
+                                    case 1: return [2 /*return*/, _a.sent()];
+                                    case 2: return [2 /*return*/];
+                                }
+                            });
+                        }); });
                         bufferToStream(data).pipe(stream);
-                        // const filePayload = {
-                        //   url: result.secure_url,
-                        //   user_id: options.currentUser.id,
-                        // };
-                        console.log(url, 'ssss');
                         return [3 /*break*/, 3];
                     case 2:
                         error_1 = _a.sent();
@@ -104,7 +110,7 @@ var FileService = /** @class */ (function () {
      */
     FileService.prototype.createFolder = function (body, file, options) {
         return __awaiter(this, void 0, void 0, function () {
-            var parser_2, data, fileResponse, result, filePayload_1, fileInstance, error_2;
+            var parser_2, data, fileResponse, result, filePayload, fileInstance, error_2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -115,11 +121,11 @@ var FileService = /** @class */ (function () {
                         return [4 /*yield*/, cloudinary_1.default.v2.uploader.upload_large(fileResponse, { folder: body.folder })];
                     case 1:
                         result = _a.sent();
-                        filePayload_1 = {
+                        filePayload = {
                             url: result.secure_url,
                             user_id: options.currentUser.id,
                         };
-                        return [4 /*yield*/, this.fileModel.query().insert(filePayload_1)];
+                        return [4 /*yield*/, this.fileModel.query().insert(filePayload)];
                     case 2:
                         fileInstance = _a.sent();
                         return [2 /*return*/, fileInstance];
@@ -226,10 +232,31 @@ var FileService = /** @class */ (function () {
             });
         });
     };
+    /**
+     * Get file history
+     *
+     */
+    FileService.prototype.getFileHistory = function (options) {
+        return __awaiter(this, void 0, void 0, function () {
+            var filesInstance, error_6;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.fileModel.query().select('url').where({ user_id: options.currentUser.id })];
+                    case 1:
+                        filesInstance = _a.sent();
+                        return [2 /*return*/, filesInstance];
+                    case 2:
+                        error_6 = _a.sent();
+                        logger_1.default.info(JSON.stringify(error_6));
+                        throw error_6;
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
     return FileService;
 }());
 exports.FileService = FileService;
-function filePayload(filePayload) {
-    throw new Error('Function not implemented.');
-}
 //# sourceMappingURL=file.service.js.map

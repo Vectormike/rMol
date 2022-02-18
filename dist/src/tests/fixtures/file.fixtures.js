@@ -39,49 +39,32 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var supertest_1 = __importDefault(require("supertest"));
-var setupDB_1 = __importDefault(require("./util/setupDB"));
-var dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
-setupDB_1.default();
-describe('User and Authentication management', function () {
-    // let token;
-    // let refreshToken;
-    it('should register a user', function (done) { return __awaiter(void 0, void 0, void 0, function () {
-        var res;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, supertest_1.default('http://localhost:8000').post("/api/auth/register").send({
-                        email: 'victorjonah199@gmail.com',
-                        full_name: 'Victor Jonah',
-                        password: 'Redeemer',
-                    })];
-                case 1:
-                    res = _a.sent();
-                    console.log('STATUS_RES', res.body.data);
-                    expect(res.status).toBe(201);
-                    expect(res.body.data.email).toEqual('victorjonah199@gmail.com');
-                    done();
-                    return [2 /*return*/];
-            }
-        });
-    }); });
-    it('should login a user', function (done) { return __awaiter(void 0, void 0, void 0, function () {
-        var res;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, supertest_1.default('http://localhost:8000').post("/api/auth/login").send({
-                        email: 'victorjonah199@gmail.com',
-                        password: 'Redeemer',
-                    })];
-                case 1:
-                    res = _a.sent();
-                    expect(res.status).toBe(200);
-                    expect(res.body.message).toEqual('Logged in successfully');
-                    done();
-                    return [2 /*return*/];
-            }
-        });
-    }); });
-});
-//# sourceMappingURL=auth.test.js.map
+exports.insertFiles = exports.fileTwo = exports.fileOne = void 0;
+var faker_1 = __importDefault(require("@faker-js/faker"));
+var file_model_1 = require("../../components/file/file.model");
+var fileOne = {
+    id: 1,
+    user_id: 1,
+    url: faker_1.default.internet.url(),
+    safe: faker_1.default.datatype.boolean(),
+};
+exports.fileOne = fileOne;
+var fileTwo = {
+    id: 2,
+    user_id: 1,
+    url: faker_1.default.internet.url(),
+    safe: faker_1.default.datatype.boolean(),
+};
+exports.fileTwo = fileTwo;
+var insertFiles = function (files) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, file_model_1.File.query().insert(files.map(function (file) { return file; }))];
+            case 1:
+                _a.sent();
+                return [2 /*return*/];
+        }
+    });
+}); };
+exports.insertFiles = insertFiles;
+//# sourceMappingURL=file.fixtures.js.map

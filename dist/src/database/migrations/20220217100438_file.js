@@ -35,53 +35,22 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var supertest_1 = __importDefault(require("supertest"));
-var setupDB_1 = __importDefault(require("./util/setupDB"));
-var dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
-setupDB_1.default();
-describe('User and Authentication management', function () {
-    // let token;
-    // let refreshToken;
-    it('should register a user', function (done) { return __awaiter(void 0, void 0, void 0, function () {
-        var res;
+exports.down = exports.up = void 0;
+function up(knex) {
+    return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, supertest_1.default('http://localhost:8000').post("/api/auth/register").send({
-                        email: 'victorjonah199@gmail.com',
-                        full_name: 'Victor Jonah',
-                        password: 'Redeemer',
-                    })];
-                case 1:
-                    res = _a.sent();
-                    console.log('STATUS_RES', res.body.data);
-                    expect(res.status).toBe(201);
-                    expect(res.body.data.email).toEqual('victorjonah199@gmail.com');
-                    done();
-                    return [2 /*return*/];
-            }
+            return [2 /*return*/];
         });
-    }); });
-    it('should login a user', function (done) { return __awaiter(void 0, void 0, void 0, function () {
-        var res;
+    });
+}
+exports.up = up;
+function down(knex) {
+    return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, supertest_1.default('http://localhost:8000').post("/api/auth/login").send({
-                        email: 'victorjonah199@gmail.com',
-                        password: 'Redeemer',
-                    })];
-                case 1:
-                    res = _a.sent();
-                    expect(res.status).toBe(200);
-                    expect(res.body.message).toEqual('Logged in successfully');
-                    done();
-                    return [2 /*return*/];
-            }
+            return [2 /*return*/];
         });
-    }); });
-});
-//# sourceMappingURL=auth.test.js.map
+    });
+}
+exports.down = down;
+//# sourceMappingURL=20220217100438_file.js.map

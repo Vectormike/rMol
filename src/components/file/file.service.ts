@@ -1,18 +1,12 @@
-import { NextFunction, Response } from 'express';
-import env from '../../helpers/env';
-import Downloader from 'nodejs-file-downloader';
 import dataUri from 'datauri/parser';
 import cloudinary from '../../config/cloudinary';
 import { BadRequestError, UnauthorizedError, NotFoundError, ForbiddenError } from '../../errors';
 import { File } from './file.model';
 import { ServiceMethodOptions } from '../../shared/types/ServiceMethodOptions';
-import { redisClient } from '../../redis.connection';
 import sharp from 'sharp';
 import { Readable } from 'stream';
 import logger from '../../logger';
 import path from 'path';
-import { PartialModelObject } from 'objection';
-import { error } from 'console';
 
 export class FileService {
   constructor(private readonly fileModel = File) {}

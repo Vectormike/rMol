@@ -1,4 +1,23 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -39,49 +58,53 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var supertest_1 = __importDefault(require("supertest"));
-var setupDB_1 = __importDefault(require("./util/setupDB"));
+var ORM = __importStar(require("knex"));
 var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-setupDB_1.default();
-describe('User and Authentication management', function () {
-    // let token;
-    // let refreshToken;
-    it('should register a user', function (done) { return __awaiter(void 0, void 0, void 0, function () {
-        var res;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, supertest_1.default('http://localhost:8000').post("/api/auth/register").send({
-                        email: 'victorjonah199@gmail.com',
-                        full_name: 'Victor Jonah',
-                        password: 'Redeemer',
-                    })];
-                case 1:
-                    res = _a.sent();
-                    console.log('STATUS_RES', res.body.data);
-                    expect(res.status).toBe(201);
-                    expect(res.body.data.email).toEqual('victorjonah199@gmail.com');
-                    done();
-                    return [2 /*return*/];
-            }
-        });
-    }); });
-    it('should login a user', function (done) { return __awaiter(void 0, void 0, void 0, function () {
-        var res;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, supertest_1.default('http://localhost:8000').post("/api/auth/login").send({
-                        email: 'victorjonah199@gmail.com',
-                        password: 'Redeemer',
-                    })];
-                case 1:
-                    res = _a.sent();
-                    expect(res.status).toBe(200);
-                    expect(res.body.message).toEqual('Logged in successfully');
-                    done();
-                    return [2 /*return*/];
-            }
-        });
-    }); });
+var knex = ORM.knex({
+    client: 'mysql',
+    connection: {
+        database: process.env.DB_NAME_TEST,
+        user: process.env.DB_USERNAME_TEST,
+        port: Number(process.env.DB_PORT_TEST),
+        host: process.env.DB_HOST_TEST,
+        password: process.env.DB_PASSWORD_TEST,
+    },
+    pool: {
+        min: 2,
+        max: 10,
+    },
+    migrations: {
+        loadExtensions: ['.ts'],
+        extension: 'ts',
+        tableName: 'knex_migrations',
+        directory: __dirname + '../../../database/migrations',
+    },
 });
-//# sourceMappingURL=auth.test.js.map
+var setupTestDB = function () {
+    beforeAll(function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, knex.migrate.rollback()];
+                case 1:
+                    _a.sent();
+                    return [4 /*yield*/, knex.migrate.latest()];
+                case 2:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); }, 30000);
+    afterAll(function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, knex.migrate.rollback()];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); }, 30000);
+};
+exports.default = setupTestDB;
+//# sourceMappingURL=setupDB.js.map

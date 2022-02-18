@@ -1,141 +1,36 @@
 version: '3.8'
 services:
-  app:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
+  api:
+    container_name: risevest
     build:
-      context: .
-    container_name: app
+      context: ./
+    image: risevest-api
+    depends_on:
+      - db
+    ports:
+      - 8000:8000
+    environment:
+      NODE_ENV: production
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: postgres
     links:
-      - elasticsearch
-      - kibana
-    depends_on:
-      - elasticsearch
-      - kibana
-    depends_on:
-      - mysql
-      - redis
-      - elasticsearch
-      - kibana
-    restart: always
-    environment: 
-      - PORT=9000
-      - REDISCLOUD_URL=redis:6379
-      - ELASTICSEARCH_URL=http://elasticsearch:9200
-      - BASE_URL=http://localhost:9000,
-      - BCRYPT_SALT=12
-      - REFRESH_TOKEN_SECRET=hththjjkekdkkkdkd
-      - JWT_AUTH_SECRET=kdkdkkdkk
-      - DB_USERNAME=vectormike
-      - DB_NAME=korapay
-      - DB_HOST=mysql
-      - DB_PORT=3306
-      - DB_PASSWORD=123456
-      - MAIL_HOST=smtp.mailtrap.io
-      - MAIL_PORT=2525
-      - MAIL_USERNAME=feef77fcb05965
-      - MAIL_PASSWORD=9572287878b716
-    networks:
-      - elk
-    ports:
-      - 9000:9000
-
-  mysql:
-    image: mysql/mysql-server:5.7.22
-    container_name: mysql
-    ports:
-      - 8889:3306
-    expose:
-      # Opens port 3306 on the container
-      - "3306"
-    command: --innodb_use_native_aio=0 --socket=/tmp/mysql.sock --bind_address=0.0.0.0
+      - db
     volumes:
-      - ./mysqlDb:/var/lib/mysql
-    environment:
-      MYSQL_HOST: "mysql"
-      MYSQL_ROOT_PASSWORD: "123456"
-      MYSQL_DATABASE: "korapay"
-      DATABASE_HOST: mysql
-      MYSQL_USER: "vectormike"
-      MYSQL_PASSWORD: "123456"
-      MYSQL_LOG_CONSOLE: "true"
-    restart: always
-    networks:
-      - elk
-    healthcheck:
-      test: ["CMD", "curl", "-fk", "tcp://localhost:3306"]
-      interval: 300s
-      timeout: 400s
-      retries: 10
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:5.0.1
-    container_name: phpmyadmin
-    restart: always
-    environment:
-        PMA_HOST: mysql
-        MYSQL_ROOT_PASSWORD: 123456
-    ports:
-        - "8089:80"
-    networks:
-      - elk
-    depends_on:
-        - mysql
-    
-  redis:
-    image: redis:6.0.6
-    volumes:
-        - ./redis/data:/data
-    networks:
-      - elk
-    ports:
-        - 6379:6379
-    entrypoint: redis-server --appendonly yes
-  
-  kibana:
-    container_name: kibana
-    build:
-       context: kibana/
-       args:
-         ELK_VERSION: 7.5.1
-    volumes:
-      - ./kibana/config/:/usr/share/kibana/config
-    ports:
-      - "5601:5601"
-    networks:
-      - elk
-    depends_on:
-      - elasticsearch
-
-  elasticsearch:
-    container_name: elasticsearch
-    build:
-        context: elasticsearch
-        args:
-          ELK_VERSION: 7.5.1
-    volumes:
-      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - ./elasticsearch/storage:/usr/share/elasticsearch/data:rw
-
-    ports:
-      - "9200:9200"
-      - "9300:9300"
-
-    environment:
-      - ES_JAVA_OPTS=-Xmx256m -Xms256m
-      - discovery.type=single-node
-      - bootstrap.memory_lock=true
-      - http.cors.allow-origin=*
-    networks:
-      - elk
-    ulimits:
-      memlock:
-        soft:  -1
-        hard:  -1
-
-networks:
-  elk:
-    driver: bridge
-
+      - './:/src'
 volumes:
-  elasticsearch:
-  log-data:
-    
+  db:
+    driver: local

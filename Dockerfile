@@ -13,7 +13,7 @@ USER root
 
 COPY --chown=node:node . .
 
-EXPOSE 9000
+EXPOSE 8000
 
 RUN npm run quick-build
 

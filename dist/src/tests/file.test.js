@@ -41,47 +41,53 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var supertest_1 = __importDefault(require("supertest"));
 var setupDB_1 = __importDefault(require("./util/setupDB"));
+var file_fixtures_1 = require("../tests/fixtures/file.fixtures");
 var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
+var BASE_URL = "http://localhost:8000";
+var filePath = __dirname + "/testfile.png";
 setupDB_1.default();
-describe('User and Authentication management', function () {
-    // let token;
-    // let refreshToken;
-    it('should register a user', function (done) { return __awaiter(void 0, void 0, void 0, function () {
-        var res;
+describe('File Upload', function () {
+    //   it('should upload a file', async (done) => {
+    //     const res = await request('http://localhost:8000').post(`/api/file/upload`).send({
+    //       file: filePath,
+    //       user_id: 1,
+    //     });
+    //     console.log('STATUS_RES', res.body);
+    //     expect(res.status).toBe(201);
+    //     // expect(res.body.data.email).toEqual('victorjonah199@gmail.com');
+    //     done();
+    //   });
+    it('should not download a file unless authorized', function (done) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, supertest_1.default('http://localhost:8000').post("/api/auth/register").send({
-                        email: 'victorjonah199@gmail.com',
-                        full_name: 'Victor Jonah',
-                        password: 'Redeemer',
-                    })];
+                case 0: 
+                // await insertFiles([fileOne]);
+                return [4 /*yield*/, supertest_1.default(BASE_URL).get("/api/file/download/" + 1).expect(401)];
                 case 1:
-                    res = _a.sent();
-                    console.log('STATUS_RES', res.body.data);
-                    expect(res.status).toBe(201);
-                    expect(res.body.data.email).toEqual('victorjonah199@gmail.com');
+                    // await insertFiles([fileOne]);
+                    _a.sent();
                     done();
                     return [2 /*return*/];
             }
         });
-    }); });
-    it('should login a user', function (done) { return __awaiter(void 0, void 0, void 0, function () {
+    }); }, 50000);
+    it('should mark a file unsafe', function (done) { return __awaiter(void 0, void 0, void 0, function () {
         var res;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, supertest_1.default('http://localhost:8000').post("/api/auth/login").send({
-                        email: 'victorjonah199@gmail.com',
-                        password: 'Redeemer',
-                    })];
+                case 0: return [4 /*yield*/, file_fixtures_1.insertFiles([file_fixtures_1.fileTwo])];
                 case 1:
+                    _a.sent();
+                    return [4 /*yield*/, supertest_1.default(BASE_URL).get("/api/file/mark-unsafe/" + 1).send()];
+                case 2:
                     res = _a.sent();
                     expect(res.status).toBe(200);
-                    expect(res.body.message).toEqual('Logged in successfully');
+                    expect(res.body.message).toEqual('File successfully marked unsafe');
                     done();
                     return [2 /*return*/];
             }
         });
     }); });
 });
-//# sourceMappingURL=auth.test.js.map
+//# sourceMappingURL=file.test.js.map

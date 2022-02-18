@@ -1,7 +1,7 @@
 {
-  "name": "stackoverflow",
+  "name": "risevest",
   "version": "1.0.0",
-  "description": "Stackoverflow API",
+  "description": "API",
   "repository": {
     "type": "git",
     "url": ""
@@ -43,13 +43,14 @@
     "start-dev": "set NODE_ENV=development && nodemon dist/server.js",
     "lint": "tslint src/**/*.ts -p tsconfig.json",
     "lint:fix": "tslint --fix -c tslint.json 'src/**/*{.ts}",
-    "test": "set NODE_ENV=test && jest  --runInBand --detectOpenHandles --verbose --forceExit ",
-    "coverage": "set NODE_ENV=test && jest --coverage --runInBand --detectOpenHandles --forceExit ",
+    "test": "npm run dev && jest -i --colors --verbose --detectOpenHandles",
+    "coverage": "set NODE_ENV=test && jest --coverage --runInBand --detectOpenHandles ",
     "watch-ts": "tsc-watch  --outDir ./dist --onSuccess \"npm run serve\" --lib ES2015 --skipLibCheck",
     "prepare": "husky install"
   },
   "dependencies": {
     "@babel/register": "^7.13.16",
+    "@faker-js/faker": "^6.0.0-alpha.6",
     "@hapi/joi": "^17.1.1",
     "@types/knex": "^0.16.1",
     "@types/morgan": "^1.9.2",
@@ -84,6 +85,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
     "multer-storage-cloudinary": "^4.0.0",
+    "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "nodejs-file-downloader": "^4.9.3",
     "nodemailer": "^6.5.0",
@@ -128,6 +130,7 @@
     "eslint-plugin-import": "^2.23.4",
     "husky": "^7.0.1",
     "istanbul": "^1.0.0-alpha.2",
+    "japa": "^4.0.0",
     "jest": "^26.6.3",
     "jest-express": "^1.12.0",
     "jest-extended": "^0.11.5",
