@@ -22,4 +22,4 @@ JWT was used for token along with redis for implementing refresh tokens
 
 #### POSTMAN API Documentation.
 
-[Postman Api documentation](https://documenter.getpostman.com/view/5622145/TzsbLSvL)
+[Postman Api documentation](https://documenter.getpostman.com/view/5622145/UVXhpbZN)
