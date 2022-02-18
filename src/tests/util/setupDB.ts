@@ -3,13 +3,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const knex = ORM.knex({
-  client: 'mysql',
+  client: 'pg',
   connection: {
-    database: process.env.DB_NAME_TEST,
-    user: process.env.DB_USERNAME_TEST,
-    port: Number(process.env.DB_PORT_TEST),
-    host: process.env.DB_HOST_TEST,
-    password: process.env.DB_PASSWORD_TEST,
+    database: process.env.DB_NAME,
+    user: process.env.DB_USERNAME,
+    port: Number(process.env.DB_PORT),
+    host: process.env.DB_HOST,
+    password: process.env.DB_PASSWORD,
   },
   pool: {
     min: 2,

@@ -11,7 +11,7 @@ describe('User and Authentication management', () => {
   // let refreshToken;
 
   it('should register a user', async (done) => {
-    const res = await request('http://localhost:8000').post(`/api/auth/register`).send({
+    const res = await request(app).post(`/api/auth/register`).send({
       email: 'victorjonah199@gmail.com',
       full_name: 'Victor Jonah',
       password: 'Redeemer',
@@ -23,7 +23,7 @@ describe('User and Authentication management', () => {
   });
 
   it('should login a user', async (done) => {
-    const res = await request('http://localhost:8000').post(`/api/auth/login`).send({
+    const res = await request(app).post(`/api/auth/login`).send({
       email: 'victorjonah199@gmail.com',
       password: 'Redeemer',
     });

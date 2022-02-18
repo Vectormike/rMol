@@ -5,7 +5,7 @@ import app from '../app';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const BASE_URL = `http://localhost:8000`;
+// const BASE_URL = `http://localhost:8000`;
 
 const filePath = `${__dirname}/testfile.png`;
 
@@ -25,13 +25,13 @@ describe('File Upload', () => {
 
   it('should not download a file unless authorized', async (done) => {
     // await insertFiles([fileOne]);
-    await request(BASE_URL).get(`/api/file/download/${1}`).expect(401);
+    await request(app).get(`/api/file/download/${1}`).expect(401);
     done();
   }, 50000);
 
   it('should mark a file unsafe', async (done) => {
     await insertFiles([fileTwo]);
-    const res = await request(BASE_URL).get(`/api/file/mark-unsafe/${1}`).send();
+    const res = await request(app).get(`/api/file/mark-unsafe/${1}`).send();
 
     expect(res.status).toBe(200);
     expect(res.body.message).toEqual('File successfully marked unsafe');
