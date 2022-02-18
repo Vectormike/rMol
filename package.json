@@ -25,13 +25,6 @@
     "instrument": true,
     "all": true
   },
-  "keywords": [
-    "TypeScript",
-    "express",
-    "nodejs",
-    "boilerplate",
-    "eslint"
-  ],
   "author": "Victor Jonah",
   "main": "dist/index.js",
   "scripts": {
@@ -43,7 +36,7 @@
     "start-dev": "set NODE_ENV=development && nodemon dist/server.js",
     "lint": "tslint src/**/*.ts -p tsconfig.json",
     "lint:fix": "tslint --fix -c tslint.json 'src/**/*{.ts}",
-    "test": "npm run dev && jest -i --colors --verbose --detectOpenHandles",
+    "test": "jest -i --colors --verbose --detectOpenHandles",
     "coverage": "set NODE_ENV=test && jest --coverage --runInBand --detectOpenHandles ",
     "watch-ts": "tsc-watch  --outDir ./dist --onSuccess \"npm run serve\" --lib ES2015 --skipLibCheck",
     "prepare": "husky install"
