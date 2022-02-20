@@ -22,7 +22,7 @@ module.exports = {
       loadExtensions: ['.ts'],
       extension: 'ts',
       tableName: 'knex_migrations',
-      directory: __dirname + '/src/database/migrations',
+      directory: __dirname + './src/database/migrations',
     },
   },
 
