@@ -110,7 +110,7 @@ export class AuthService {
         email: data.email,
         full_name: data.full_name,
         password: data.password,
-        role: 'user',
+        role: data.role,
       });
 
       return {

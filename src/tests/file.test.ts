@@ -25,16 +25,12 @@ describe('File Upload', () => {
 
   it('should not download a file unless authorized', async (done) => {
     await insertFiles([fileOne]);
-    console.log(fileOne, 'kkkkk');
-
     await request(app).get(`/api/file/download/${fileOne.id}`).expect(401);
     done();
   });
 
   it('should mark a file unsafe', async (done) => {
     await insertFiles([fileTwo]);
-    console.log(fileTwo, 'lllllll');
-
     const res = await request(app).patch(`/api/file/mark-unsafe/${fileTwo.id}`).send();
     console.log(res);
 

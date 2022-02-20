@@ -2,6 +2,7 @@ export interface CreateUserAccountInput {
   email: string;
   full_name: string;
   password: string;
+  role?: string;
 }
 
 export interface AuthJWTInput {

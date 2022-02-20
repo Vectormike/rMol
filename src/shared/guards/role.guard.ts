@@ -22,7 +22,7 @@ export default function RoleGuard(roles: string[], options?: RoleGuardOptions) {
 
     try {
       if (!currentUser) throw new ForbiddenError(genericMsg);
-    
+
       if (!roles.includes(currentUser.role)) {
         throw new ForbiddenError(genericMsg);
       }
@@ -32,8 +32,8 @@ export default function RoleGuard(roles: string[], options?: RoleGuardOptions) {
       if (strict) {
         next(error);
       }
-  
+
       next();
     }
-  }
+  };
 }

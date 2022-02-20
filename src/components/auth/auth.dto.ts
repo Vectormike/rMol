@@ -6,6 +6,7 @@ export class AuthValidator {
       email: Joi.string().required().trim().error(new Error('Email is required')),
       full_name: Joi.string().required().trim().error(new Error('Full name is required')),
       password: Joi.string().required().error(new Error('Password is required')),
+      role: Joi.string().required().trim().error(new Error('Role is required')),
     };
   });
 
